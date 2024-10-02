@@ -31,7 +31,7 @@ export default function Intro() {
             }}
           >
             <Image
-              src="/profile.jpeg"
+              src="/aniruth-raman.github.io/profile.jpeg"
               alt="Aniruth's portrait"
               width="192"
               height="192"
