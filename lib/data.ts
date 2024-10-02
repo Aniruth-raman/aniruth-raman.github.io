@@ -1,3 +1,5 @@
+import { desc } from "framer-motion/client";
+import { comma } from "postcss/lib/list";
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { LuGraduationCap } from "react-icons/lu";
@@ -44,9 +46,11 @@ export const experiencesData = [
   },
   {
     title: "MBA in Fintech",
+    company:undefined,
     location: "Birla Institute of Technical Sciences, Pilani",
     // description:
     //   "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
+    description: undefined,
     icon: React.createElement(LuGraduationCap),
     date: "2022 - Present",
   },
@@ -62,7 +66,9 @@ export const experiencesData = [
   },
   {
     title: "B.Tech - Information and Communication Technology",
+    company: undefined,
     location: "SASTRA Deemed University, Thanjavur",
+    description: undefined,
     // description:
     //   "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
     icon: React.createElement(LuGraduationCap),
