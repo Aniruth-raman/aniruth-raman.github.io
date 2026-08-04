@@ -1,15 +1,116 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-html {
-  --line-color: #e5e7eb;
+:root {
+  --color-paper: #f7f8fa;
+  --color-paper-raised: #ffffff;
+  --color-ink: #14171f;
+  --color-ink-muted: #5b6270;
+  --color-ink-faint: #9096a3;
+  --color-line: #e2e4ea;
+  --color-accent: #2952e3;
+  --color-accent-soft: #e9edfc;
+  --color-amber: #d98c14;
+
+  --color-hero: #10131b;
+  --color-hero-raised: #191d29;
+  --color-hero-line: #2b3040;
+  --color-hero-text-muted: #a4abbd;
+  --color-hero-accent: #6f8cff;
 }
 
-html.dark {
-  --line-color: rgba(255, 255, 255, 0.2);
+@theme inline {
+  --color-paper: var(--color-paper);
+  --color-paper-raised: var(--color-paper-raised);
+  --color-ink: var(--color-ink);
+  --color-ink-muted: var(--color-ink-muted);
+  --color-ink-faint: var(--color-ink-faint);
+  --color-line: var(--color-line);
+  --color-accent: var(--color-accent);
+  --color-accent-soft: var(--color-accent-soft);
+  --color-amber: var(--color-amber);
+
+  --color-hero: var(--color-hero);
+  --color-hero-raised: var(--color-hero-raised);
+  --color-hero-line: var(--color-hero-line);
+  --color-hero-text-muted: var(--color-hero-text-muted);
+  --color-hero-accent: var(--color-hero-accent);
+
+  --font-display: var(--font-space-grotesk);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
-.borderBlack {
-  @apply border border-black/10;
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: white;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.hero-glow {
+  background:
+    radial-gradient(
+      60% 50% at 80% 0%,
+      color-mix(in srgb, var(--color-hero-accent) 22%, transparent) 0%,
+      transparent 70%
+    ),
+    var(--color-hero);
+}
+
+.hero-fade {
+  background: linear-gradient(to bottom, transparent, var(--color-paper));
+}
+
+.status-dot {
+  position: relative;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #2fa84f;
+}
+
+.status-dot::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 999px;
+  border: 1px solid #2fa84f;
+  animation: pulse-ring 2.4s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
 }

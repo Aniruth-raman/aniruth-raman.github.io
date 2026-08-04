@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# aniruth.me
 
-## Getting Started
+Personal portfolio. Next.js (App Router) + TypeScript + Tailwind CSS v4 + Framer Motion, exported as a static site and deployed to GitHub Pages.
 
-First, run the development server:
+## Editing content
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Almost everything you'll want to change — name, bio, skills, experience, projects, links, interview answers, and the `/now` page — lives in one file:
+
+```
+lib/data.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+No need to touch component code for text edits.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- `/` — main portfolio (hero, about, skills, experience, projects, contact)
+- `/interview` — pre-answered questions for hiring managers (content: `interview` in `lib/data.ts`)
+- `/now` — snapshot of current focus (content: `now` in `lib/data.ts`, includes a `lastUpdated` field — update it whenever you revise the page)
 
-## Learn More
+## Local development
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm install
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Open http://localhost:3000.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Build
 
-## Deploy on Vercel
+```bash
+npm run build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This produces a static export in `out/` (configured via `output: "export"` in `next.config.ts`), which is what GitHub Pages serves.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Deploying to GitHub Pages
+
+This repo includes `.github/workflows/deploy.yml`, which builds and deploys `out/` automatically on every push to `main` using GitHub's official Pages Actions.
+
+One-time setup in your GitHub repo:
+
+1. Go to **Settings → Pages**.
+2. Under **Build and deployment → Source**, choose **GitHub Actions**.
+3. Push to `main` — the workflow builds and deploys automatically.
+
+### Custom domain (aniruth.me)
+
+`public/CNAME` already contains `aniruth.me` and is copied into the export automatically, so GitHub Pages will keep using your custom domain. Make sure your DNS still points at GitHub Pages (same setup as your current site).
+
+`public/.nojekyll` is included so GitHub Pages serves the `_next/` asset folder correctly (Jekyll ignores underscore-prefixed folders by default).
+
+## Stack
+
+- Next.js 16 (App Router, static export)
+- TypeScript
+- Tailwind CSS v4 (design tokens in `app/globals.css`)
+- Framer Motion (scroll-reveal + hero entrance only — kept deliberately light)
+- Fonts: Space Grotesk (display), Inter (body), JetBrains Mono (labels/meta)
