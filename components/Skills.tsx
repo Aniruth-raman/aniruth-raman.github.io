@@ -13,7 +13,7 @@ export default function Skills() {
       </Reveal>
       <Reveal>
         <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight mb-10 max-w-xl">
-          What I reach for day to day
+          Tools I use day to day
         </h2>
       </Reveal>
 

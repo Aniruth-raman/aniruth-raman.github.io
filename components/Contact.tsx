@@ -13,13 +13,13 @@ export default function Contact() {
       </Reveal>
       <Reveal>
         <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight max-w-2xl leading-[1.15]">
-          Open to remote-friendly, product-focused teams.
+          I&apos;m looking for a remote-friendly, product-focused team.
         </h2>
       </Reveal>
       <Reveal delay={0.08}>
         <p className="mt-5 text-ink-muted max-w-lg leading-relaxed">
-          The best way to reach me is email. I usually reply within a day or
-          two.
+          Email is the easiest way to reach me. I usually get back to you within
+          a day or two.
         </p>
       </Reveal>
 

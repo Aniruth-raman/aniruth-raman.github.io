@@ -13,13 +13,12 @@ export default function Projects() {
       </Reveal>
       <Reveal>
         <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight mb-3 max-w-xl">
-          Things I&apos;ve built for myself
+          Things I&apos;ve built
         </h2>
       </Reveal>
       <Reveal delay={0.05}>
         <p className="text-ink-muted text-sm md:text-base max-w-xl mb-12">
-          Small, single-purpose tools — the kind of thing I&apos;d otherwise
-          do by hand every week.
+          Small tools for jobs I used to do by hand each week.
         </p>
       </Reveal>
 

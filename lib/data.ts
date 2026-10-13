@@ -15,9 +15,9 @@ export const profile = {
 
 export const about = {
   paragraphs: [
-    "I'm a backend engineer with 6.5+ years in banking and fintech, currently a Technical Lead at HCLTech. I spend most of my time in Java and Spring Boot, moving services onto Kubernetes and wiring them together with Kafka.",
-    "I started at TCS in a functional testing role, standardizing a BDD framework and picking up Java, ML and React Native work along the way. I moved into Java development at Wipro because building was what I actually wanted to do — deployment and infra came with that role rather than as a separate track, which gave me a working view of a system end to end, from the code to the cluster it runs on.",
-    "Outside of client work, I build small tools that solve problems I actually have — a mod-queue bot, a content scheduler, a document scanner — and write about the process. I'm also learning AI agents and systems, and I keep a running note of what I'm focused on at any given time on my /now page.",
+    "I'm a backend engineer with 6.5+ years in banking and fintech, and a Technical Lead at HCLTech. Most days I'm working in Java and Spring Boot, moving services to Kubernetes and connecting them with Kafka.",
+    "I started at TCS in functional testing, where I helped standardize a BDD framework and also got to work on Java, ML, and React Native projects. At Wipro, I moved into Java development. Deployment and infrastructure came with the job, so I learned to follow a system from the code all the way to the cluster running it.",
+    "Outside work, I build small tools for problems I run into, like a mod-queue bot, a content scheduler, and a document scanner. I write about the process, too. Lately I've been learning about AI agents and systems. My /now page is where I keep track of what I'm focused on.",
   ],
 };
 
@@ -65,9 +65,9 @@ export const experience: Experience[] = [
     period: "2026 — Present",
     current: true,
     points: [
-      "Leading migration of a legacy Java Spring / JSP banking application from on-prem to Google Cloud Platform.",
+      "Leading the move of a legacy Java Spring/JSP banking application from on-premises servers to Google Cloud Platform.",
       "Resolving SonarQube-flagged vulnerabilities as part of the modernization effort.",
-      "Preparing the next phase of the rewrite, moving the service to Java Quarkus with a React frontend.",
+      "Preparing the next phase of the rewrite, which will move the service to Java Quarkus with a React frontend.",
       "Deploying through Harness as part of the team's CI/CD pipeline.",
     ],
   },
@@ -77,8 +77,8 @@ export const experience: Experience[] = [
     location: "Chennai, India",
     period: "2024 — 2026",
     points: [
-      "Moved into Java development after four and a half years in testing, to focus on building rather than validating.",
-      "Handled deployment and infrastructure as part of the development role — Helm, OpenShift, GKE and Docker — rather than as a separate DevOps track.",
+      "Moved into Java development after four and a half years in testing. I wanted to spend more of my time building software.",
+      "Worked on deployment and infrastructure alongside development, using Helm, OpenShift, GKE, and Docker.",
       "Shipped a production change for a new service as part of a platform migration.",
     ],
   },
@@ -88,9 +88,9 @@ export const experience: Experience[] = [
     location: "Chennai, India",
     period: "2019 — 2024",
     points: [
-      "Started in a functional testing role on a BDD framework (WebdriverIO), and helped migrate it from JavaScript to TypeScript and from sync to async.",
-      "Also worked on ML initiatives, a VR application, and a React Native app for client visits, alongside the core testing work.",
-      "Built strong visibility with client leadership through the impact of this work.",
+      "Started in functional testing with the team's WebdriverIO BDD framework. Helped move it from JavaScript to TypeScript and from synchronous to asynchronous tests.",
+      "Alongside testing, worked on ML initiatives, a VR application, and a React Native app for client visits.",
+      "The work brought me regular visibility with client leadership.",
     ],
   },
 ];
@@ -117,12 +117,12 @@ export const education: Education[] = [
 export const now = {
   lastUpdated: "August 2026",
   mainFocus: [
-    "Leading the migration of a legacy Java Spring/JSP banking application from on-prem to Google Cloud Platform at HCLTech, with a Java Quarkus + React rewrite coming up next.",
-    "Learning AI agents and the broader AI systems space — genuinely interesting territory to me right now.",
-    "Working on my fitness. Don't be surprised if you catch me at the gym.",
+    "At HCLTech, I'm leading the move of a legacy Java Spring/JSP banking application to Google Cloud Platform. A rewrite in Java Quarkus and React is next.",
+    "I'm learning about AI agents and the wider field of AI systems. It's what I'm curious about lately.",
+    "I'm also working on my fitness. You might see me at the gym.",
   ],
   backBurner: [
-    "Building and writing about small side projects — a Reddit mod-queue bot, a LinkedIn content scheduler, a document scanner app.",
+    "Building small side projects and writing about them: a Reddit mod-queue bot, a LinkedIn content scheduler, and a document scanner app.",
     "Moderating r/developersIndia.",
   ],
 };
@@ -136,34 +136,34 @@ export const interview: InterviewQA[] = [
   {
     question: "What makes you who you are today?",
     answer: [
-      "Curiosity. Whenever I come across something I don't know, I try to learn it — not to become an expert, but to have enough fluency to understand what's going on. So if something breaks, I can fix it myself instead of depending on someone else. This isn't just technical. I try to do this in general too.",
+      "Curiosity. When I run into something I don't know, I try to learn enough to understand it. That way, when something breaks, I can often figure it out myself. I try to bring the same curiosity to things outside work, too.",
     ],
   },
   {
     question: "What's the best thing you've built without anyone asking you to?",
     answer: [
-      "Back in 2020, my aunt worked at a small company. Part of her job was consolidating hundreds of client invoices into a report, by hand, every time. It used to eat up days of her time. I built her a tool: parsed the PDFs to text, used regex to pull out the fields, and generated the consolidated report using Jinja templates in her company's format. This was pre-LLM, so this kind of thing actually took real work.",
-      "The harder part was giving it to someone non-technical. I couldn't hand her a script and a terminal. So I built a GUI in tkinter — file/folder pickers, client selection, the works — and packaged it into an executable with cxfreeze so she didn't have to install Python or any dependencies. I kept the regex rules in an external config file, so if an invoice format changed, she — or I — could fix it without rebuilding the whole app.",
-      "What used to take her 5-7 days took an hour. That's one of the things I'm most proud of building.",
+      "Back in 2020, my aunt worked at a small company. Part of her job was consolidating hundreds of client invoices into a report, by hand, every time. It used to eat up days of her time. I built her a tool: it parsed the PDFs to text, used regex to pull out the fields, and generated the report in her company's format with Jinja templates. I built it before LLM tools were part of my workflow.",
+      "The tricky part was making it usable for someone who doesn't work in a terminal. I built a tkinter interface with file and folder pickers and client selection, then packaged it with cxfreeze so she didn't need Python or any other dependencies. I kept the regex rules in a separate config file, which meant she or I could update them if an invoice format changed without rebuilding the app.",
+      "The report went from taking her five to seven days to taking an hour. I'm proud of that one.",
     ],
   },
   {
     question: "How did you get from testing to where you are now?",
     answer: [
-      "I started at TCS in a functional testing role, working on the team's WebdriverIO BDD framework. Within six months, with barely any handover, I was working at the level of the senior folks on it. I also worked on ML initiatives, a VR application, and a React Native app for client visits. I helped move the testing framework from sync to async and from JavaScript to TypeScript, and standardized it for the team. My work had real visibility on the client side — client leadership knew me and my work by name. But eventually it got repetitive and I stopped learning. So I moved into Java development at Wipro, since dev work was what I actually wanted. Deployment and infra work came as part of that role, not as a separate track. Same at HCLTech, where I now lead the effort moving our banking application from on-prem to GCP.",
+      "I started at TCS in functional testing, working on the team's WebdriverIO BDD framework. With little handover, I was taking on work at the level of the senior engineers within six months. I also worked on ML initiatives, a VR application, and a React Native app for client visits. On the testing framework, I helped move the team from synchronous to asynchronous tests and from JavaScript to TypeScript. Client leadership knew my work, but after a while the role stopped teaching me much. I moved to Wipro to work in Java development, which was the direction I wanted to take. Deployment and infrastructure were part of that role, and now, at HCLTech, I lead the move of a banking application from on-premises servers to GCP.",
     ],
   },
   {
     question:
       "Some interviewers test deep language trivia — HashMap internals, sorting by hand. What's your take on that as a signal?",
     answer: [
-      "Honestly, I haven't run into real situations where I needed to write a sorting algorithm from scratch, so I might be rusty on it. But if a job actually needs that depth, I'll learn it. I have no resistance to learning new things — that's kind of the whole premise of who I am.",
+      "I haven't had to write a sorting algorithm from scratch at work, so I'd probably be rusty. If a role calls for that level of detail, I'll brush up. I like learning new things, and I'm comfortable admitting when I need to.",
     ],
   },
   {
     question: "Generalist or specialist?",
     answer: [
-      "Generalist. I don't want to tie myself to one stack or language. Languages are tools for the problem in front of you — if all you have is a hammer, everything looks like a nail. I'd rather know what's actually best for the problem and use that.",
+      "Generalist. I don't want to limit myself to one stack or language. The problem should guide the choice of tools, and I'd rather understand the options than reach for the same answer every time.",
     ],
   },
   {
@@ -173,19 +173,19 @@ export const interview: InterviewQA[] = [
   {
     question: "What kind of team are you looking for?",
     answer: [
-      "One where my work has real impact, and where people are treated like adults — decisions make logical sense, not arbitrary rules for their own sake. People should have the autonomy to do what's actually best rather than follow process for the sake of process.",
+      "A team where my work has a clear impact and people are trusted to make decisions. I value processes that help the work, and I like having room to choose the right approach when the situation calls for it.",
     ],
   },
   {
     question: "What are you working on right now?",
     answer: [
-      "Learning AI agents and the broader AI systems space — I find it genuinely interesting. Also working on my fitness, so don't be surprised if you catch me at the gym. More detail on my /now page.",
+      "I'm learning about AI agents and AI systems, and working on my fitness. You might find me at the gym. I keep more detail on my /now page.",
     ],
   },
   {
     question: "Thoughts on AI-assisted programming?",
     answer: [
-      "Useful — it adds a layer of abstraction where you're not thinking about every line but looking at things from a higher level. But you still need to judge whether a piece of code is actually needed or correct. A human has to sign off, not just accept whatever the AI produces.",
+      "It's useful because it lets you work at a higher level instead of thinking through every line yourself. You still need to decide whether the code is needed and whether it's correct. I treat the AI's output as a suggestion that needs a person to review it.",
     ],
   },
 ];
@@ -203,7 +203,7 @@ export const projects: Project[] = [
     name: "reddit-llm-moderator",
     status: "active",
     description:
-      "An LLM-powered automation tool for a Reddit mod queue, built to cut down manual review time. Uses PRAW to read the queue and free-tier LLM APIs via OpenRouter to make moderation calls, deployed on a schedule through GitHub Actions.",
+      "A Reddit mod-queue tool that uses an LLM to cut down on manual review. It reads the queue with PRAW, makes moderation calls through free-tier LLM APIs on OpenRouter, and runs on a GitHub Actions schedule.",
     stack: ["Python", "PRAW", "OpenRouter", "GitHub Actions"],
     repoUrl: "https://github.com/Aniruth-raman/reddit-llm-moderator",
   },
@@ -211,7 +211,7 @@ export const projects: Project[] = [
     name: "contentpilot",
     status: "active",
     description:
-      "A LinkedIn content bot, rewritten from a Java Spring Boot original into a lighter Python script run on a GitHub Actions cron. Drafts are reviewed and approved from Telegram — a button tap approves or regenerates a post within seconds.",
+      "A LinkedIn content bot, rewritten from Java Spring Boot as a smaller Python script on a GitHub Actions schedule. I review drafts in Telegram and can approve or regenerate a post with a tap.",
     stack: ["Python", "GitHub Actions", "Telegram Bot API"],
     repoUrl: "https://github.com/Aniruth-raman/contentpilot",
   },
@@ -219,7 +219,7 @@ export const projects: Project[] = [
     name: "Lens",
     status: "active",
     description:
-      "A document scanner app for mobile, built with React Native and Expo. Detects document edges from the camera feed and exports clean, cropped PDFs.",
+      "A mobile document scanner built with React Native and Expo. It finds document edges in the camera feed and exports cropped PDFs.",
     stack: ["React Native", "Expo", "TypeScript"],
     repoUrl: "https://github.com/Aniruth-raman/Lens",
   },

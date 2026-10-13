@@ -7,7 +7,7 @@ import { now, profile } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "What I'm doing now",
-  description: "A snapshot of what Aniruth is focused on at the moment.",
+  description: "What Aniruth is working on and thinking about right now.",
 };
 
 export default function NowPage() {

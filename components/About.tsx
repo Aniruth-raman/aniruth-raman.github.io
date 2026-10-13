@@ -11,7 +11,7 @@ export default function About() {
       <div className="grid md:grid-cols-[220px_1fr] gap-6 md:gap-16">
         <Reveal>
           <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight md:sticky md:top-24">
-            A bit about how I got here
+            How I got here
           </h2>
         </Reveal>
         <div className="space-y-5 max-w-2xl">

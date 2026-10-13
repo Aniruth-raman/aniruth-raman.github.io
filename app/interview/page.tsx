@@ -8,7 +8,7 @@ import { interview, profile } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Interviewing Aniruth",
   description:
-    "Answers to questions that matter, so hiring managers don't have to guess how I think.",
+    "A few questions about how I work, what I've built, and what I'm looking for.",
 };
 
 function slugify(question: string) {
@@ -36,9 +36,9 @@ export default function InterviewPage() {
 
         <Reveal delay={0.05}>
           <p className="text-ink-muted leading-relaxed max-w-xl">
-            A set of questions I&apos;ve answered up front, so a hiring
-            manager or interviewer can get a real sense of how I think before
-            we&apos;re even in a room together. It saves us both time.
+            I&apos;ve answered a few common interview questions here. They cover
+            how I work, what I&apos;ve built, and what I&apos;m looking for, so
+            we can spend our time on the parts that matter to both of us.
           </p>
         </Reveal>
 

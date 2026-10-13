@@ -23,7 +23,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Aniruth Raghuraman — Backend Engineer",
   description:
-    "Backend engineer with 6.5+ years in banking and fintech. Java, Spring Boot, Kafka, Kubernetes. Building in public.",
+    "I'm Aniruth, a backend engineer with 6.5+ years in banking and fintech. I work with Java, Spring Boot, Kafka, and Kubernetes.",
 };
 
 export default function RootLayout({
