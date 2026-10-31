@@ -14,7 +14,7 @@ export default function NowPage() {
   return (
     <>
       <Nav />
-      <main className="mx-auto max-w-3xl px-6 md:px-8 pt-16 md:pt-20 pb-24">
+      <main id="main-content" className="mx-auto max-w-3xl px-6 md:px-8 pt-16 md:pt-20 pb-24">
         <Reveal>
           <Eyebrow>{"// now"}</Eyebrow>
         </Reveal>

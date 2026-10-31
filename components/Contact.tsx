@@ -36,6 +36,7 @@ export default function Contact() {
             target="_blank"
             rel="noreferrer"
             download={profile.resumeFileName}
+            aria-label="Download résumé (opens in a new tab)"
             className="inline-flex items-center gap-2 text-sm font-medium text-ink border border-line px-5 py-2.5 rounded-full hover:border-accent hover:text-accent transition-colors"
           >
             Download résumé
@@ -49,6 +50,7 @@ export default function Contact() {
             href={profile.github}
             target="_blank"
             rel="noreferrer"
+            aria-label="GitHub profile (opens in a new tab)"
             className="hover:text-accent transition-colors"
           >
             github ↗
@@ -57,6 +59,7 @@ export default function Contact() {
             href={profile.linkedin}
             target="_blank"
             rel="noreferrer"
+            aria-label="LinkedIn profile (opens in a new tab)"
             className="hover:text-accent transition-colors"
           >
             linkedin ↗

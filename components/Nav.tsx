@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { profile } from "@/lib/data";
 import { usePathname } from "next/navigation";
+
 const links = [
   { href: "/#about", label: "about" },
   { href: "/#skills", label: "skills" },
@@ -18,6 +19,7 @@ export default function Nav({ dark = false }: { dark?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
@@ -25,14 +27,14 @@ export default function Nav({ dark = false }: { dark?: boolean }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close the mobile menu on any resize back to desktop width.
   useEffect(() => {
-    const onResize = () => {
-      if (window.innerWidth >= 768) setMenuOpen(false);
+    if (!menuOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
     };
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [menuOpen]);
 
   // Nav sits over the dark hero until the page scrolls (or on pages that
   // don't have a dark hero at all, via the `dark` prop being false).
@@ -48,6 +50,13 @@ export default function Nav({ dark = false }: { dark?: boolean }) {
           : "border-b border-transparent"
       }`}
     >
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 bg-paper text-ink text-sm font-medium px-4 py-2 rounded border border-line"
+      >
+        Skip to main content
+      </a>
+
       <nav className="mx-auto max-w-5xl px-6 md:px-8 h-16 flex items-center justify-between">
         <Link
           href="/"
@@ -55,12 +64,12 @@ export default function Nav({ dark = false }: { dark?: boolean }) {
             overDark ? "text-white" : "text-ink"
           }`}
           onClick={(e) => {
-    setMenuOpen(false);
-    if (pathname === "/") {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  }}
+            setMenuOpen(false);
+            if (pathname === "/") {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
         >
           aniruth<span className="text-accent">.</span>me
         </Link>
@@ -72,14 +81,15 @@ export default function Nav({ dark = false }: { dark?: boolean }) {
         >
           {links.map((link) => (
             <li key={link.href}>
-              <a
+              <Link
                 href={link.href}
+                aria-current={pathname === link.href ? "page" : undefined}
                 className={`transition-colors ${
                   overDark ? "hover:text-white" : "hover:text-ink"
                 }`}
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -101,6 +111,7 @@ export default function Nav({ dark = false }: { dark?: boolean }) {
           type="button"
           onClick={() => setMenuOpen((v) => !v)}
           aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           className={`md:hidden flex items-center justify-center w-9 h-9 -mr-2 ${
             overDark ? "text-white" : "text-ink"
@@ -130,17 +141,21 @@ export default function Nav({ dark = false }: { dark?: boolean }) {
 
       {/* Mobile dropdown panel */}
       {menuOpen && (
-        <div className="md:hidden border-t border-line bg-paper px-6 py-5">
+        <div
+          id="mobile-menu"
+          className="md:hidden border-t border-line bg-paper px-6 py-5"
+        >
           <ul className="flex flex-col gap-4 font-mono text-sm text-ink">
             {links.map((link) => (
               <li key={link.href}>
-                <a
+                <Link
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
+                  aria-current={pathname === link.href ? "page" : undefined}
                   className="hover:text-accent transition-colors"
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

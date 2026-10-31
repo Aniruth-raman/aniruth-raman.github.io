@@ -57,6 +57,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noreferrer"
                 download={profile.resumeFileName}
+                aria-label="Download résumé (opens in a new tab)"
                 className="inline-flex items-center gap-2 text-sm font-medium text-white border border-hero-line px-5 py-2.5 rounded-full hover:border-hero-accent hover:text-hero-accent transition-colors"
               >
                 Download résumé
@@ -74,6 +75,7 @@ export default function Hero() {
                 className="hover:text-hero-accent transition-colors"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="GitHub profile (opens in a new tab)"
               >
                 github ↗
               </a>
@@ -82,6 +84,7 @@ export default function Hero() {
                 className="hover:text-hero-accent transition-colors"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="LinkedIn profile (opens in a new tab)"
               >
                 linkedin ↗
               </a>

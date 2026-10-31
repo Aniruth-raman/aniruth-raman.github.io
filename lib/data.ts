@@ -196,31 +196,47 @@ export type Project = {
   description: string;
   stack: string[];
   repoUrl: string;
+  featured?: boolean;
+  highlights?: string[];
 };
 
 export const projects: Project[] = [
   {
+    name: "scale",
+    status: "shipped",
+    featured: true,
+    description:
+      "The vendor app required an account and sent every reading to their servers. I just wanted to read my weight and save it locally, so I reverse-engineered the scale's BLE protocol from the APK and built a simple replacement with no account and no server.",
+    highlights: [
+      "Derived the AILink BLE protocol from the shipped APK so the scale never needs the vendor app.",
+      "No account and no cloud — readings go straight into a local SQLite database.",
+      "Weight decoding verified against the physical scale; handles split frames and checksum validation.",
+    ],
+    stack: ["Flutter", "Dart", "BLE", "SQLite"],
+    repoUrl: "https://github.com/Aniruth-raman/scale",
+  },
+  {
+    name: "scan",
+    status: "shipped",
+    description:
+      "Microsoft Lens moved scanning behind OneDrive, and the replacements all wanted an account or a subscription. I rebuilt the exact flow I actually used — point, shoot, adjust corners, save — so my documents stay on my phone.",
+    stack: ["Flutter", "Dart", "Kotlin", "TensorFlow Lite"],
+    repoUrl: "https://github.com/Aniruth-raman/scan",
+  },
+  {
     name: "reddit-llm-moderator",
     status: "active",
     description:
-      "A Reddit mod-queue tool that uses an LLM to cut down on manual review. It reads the queue with PRAW, makes moderation calls through free-tier LLM APIs on OpenRouter, and runs on a GitHub Actions schedule.",
+      "Moderating r/developersIndia meant reviewing the same modqueue patterns every day. I wanted the obvious cases handled automatically so I could spend time on the edge cases instead.",
     stack: ["Python", "PRAW", "OpenRouter", "GitHub Actions"],
     repoUrl: "https://github.com/Aniruth-raman/reddit-llm-moderator",
   },
   {
-    name: "contentpilot",
+    name: "TechNeck",
     status: "active",
     description:
-      "A LinkedIn content bot, rewritten from Java Spring Boot as a smaller Python script on a GitHub Actions schedule. I review drafts in Telegram and can approve or regenerate a post with a tap.",
-    stack: ["Python", "GitHub Actions", "Telegram Bot API"],
-    repoUrl: "https://github.com/Aniruth-raman/contentpilot",
-  },
-  {
-    name: "Lens",
-    status: "active",
-    description:
-      "A mobile document scanner built with React Native and Expo. It finds document edges in the camera feed and exports cropped PDFs.",
-    stack: ["React Native", "Expo", "TypeScript"],
-    repoUrl: "https://github.com/Aniruth-raman/Lens",
+      "After too many hours looking down at my phone, I wanted a simple nudge when my neck angle drifted. The camera measures head pitch on-device and never records or uploads anything.",
+    stack: ["React Native", "TypeScript", "ML Kit", "VisionCamera"],
+    repoUrl: "https://github.com/Aniruth-raman/TechNeck",
   },
 ];

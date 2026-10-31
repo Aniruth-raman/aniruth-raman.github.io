@@ -1,6 +1,6 @@
 export default function Eyebrow({ children }: { children: string }) {
   return (
-    <div className="flex items-center gap-3 mb-5">
+    <div className="flex items-center gap-3 mb-5" aria-hidden="true">
       <span className="font-mono text-xs text-accent tracking-wide">
         {children}
       </span>
